@@ -16,10 +16,7 @@ resource "aws_lb" "ALB" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = ["sg-07bc7161aecbfbe53"]
-  subnet_mapping {
-    subnet_id     = element(aws_subnet.pubsn1.*.id, count.index)
-    
-  }
+  subnets            = ["subnet-0019df2310375625c", "subnet-0a1dcabf4a3bb3bd6"]
 
 }
 
